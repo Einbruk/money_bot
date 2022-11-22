@@ -1,0 +1,89 @@
+22-11-2022 20:20:53  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:20:53  ---  Function read_json called with arguments (), {}
+22-11-2022 20:21:10  ---  Function loan called with arguments (259702310, 'alex', 100, 'igor'), {}
+22-11-2022 20:21:10  ---  Function read_json called with arguments (), {}
+22-11-2022 20:21:10  ---  User not found
+22-11-2022 20:21:10  ---  Function returned: False
+22-11-2022 20:22:50  ---  Function loan called with arguments (259702310, 'igor', 100, 'vitya'), {}
+22-11-2022 20:22:50  ---  Function read_json called with arguments (), {}
+22-11-2022 20:22:50  ---  Function returned: True
+22-11-2022 20:23:10  ---  Function loan called with arguments (259702310, 'vitya', 200, 'lesha'), {}
+22-11-2022 20:23:10  ---  Function read_json called with arguments (), {}
+22-11-2022 20:23:10  ---  User not found
+22-11-2022 20:23:10  ---  Function returned: False
+22-11-2022 20:23:24  ---  Function loan called with arguments (259702310, 'vitya', 200, 'leha'), {}
+22-11-2022 20:23:24  ---  Function read_json called with arguments (), {}
+22-11-2022 20:23:24  ---  Function returned: True
+22-11-2022 20:23:43  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:23:43  ---  Function read_json called with arguments (), {}
+22-11-2022 20:23:53  ---  Function loan called with arguments (259702310, 'leha', 400, 'vitya'), {}
+22-11-2022 20:23:53  ---  Function read_json called with arguments (), {}
+22-11-2022 20:23:53  ---  Function returned: True
+22-11-2022 20:23:58  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:23:58  ---  Function read_json called with arguments (), {}
+22-11-2022 20:35:14  ---  Function loan called with arguments (259702310, 'vitya', 200, 'igor'), {}
+22-11-2022 20:35:14  ---  Function read_json called with arguments (), {}
+22-11-2022 20:35:14  ---  Function returned: True
+22-11-2022 20:35:49  ---  Function split_costs called with arguments (259702310, 'igor', 400, []), {}
+22-11-2022 20:35:49  ---  Function read_json called with arguments (), {}
+22-11-2022 20:35:49  ---  Function returned: True
+22-11-2022 20:35:53  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:35:53  ---  Function read_json called with arguments (), {}
+22-11-2022 20:36:54  ---  Function split_costs called with arguments (259702310, 'igor', 400, []), {}
+22-11-2022 20:36:54  ---  Function read_json called with arguments (), {}
+22-11-2022 20:36:54  ---  Function returned: True
+22-11-2022 20:36:57  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:36:57  ---  Function read_json called with arguments (), {}
+22-11-2022 20:37:44  ---  Function loan called with arguments (259702310, 'vitya', 200, 'leha'), {}
+22-11-2022 20:37:44  ---  Function read_json called with arguments (), {}
+22-11-2022 20:37:44  ---  Function returned: True
+22-11-2022 20:37:47  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:37:47  ---  Function read_json called with arguments (), {}
+22-11-2022 20:37:58  ---  Function split_costs called with arguments (259702310, 'leha', 333, []), {}
+22-11-2022 20:37:58  ---  Function read_json called with arguments (), {}
+22-11-2022 20:37:58  ---  Function returned: True
+22-11-2022 20:38:01  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:38:01  ---  Function read_json called with arguments (), {}
+22-11-2022 20:39:21  ---  Function split_costs called with arguments (259702310, 'leha', 267, []), {}
+22-11-2022 20:39:21  ---  Function read_json called with arguments (), {}
+22-11-2022 20:39:21  ---  Function returned: True
+22-11-2022 20:39:24  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:39:24  ---  Function read_json called with arguments (), {}
+22-11-2022 20:39:38  ---  Function loan called with arguments (259702310, 'vitya', 66, 'igor'), {}
+22-11-2022 20:39:38  ---  Function read_json called with arguments (), {}
+22-11-2022 20:39:38  ---  Function returned: True
+22-11-2022 20:39:40  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:39:40  ---  Function read_json called with arguments (), {}
+22-11-2022 20:39:49  ---  Function remove_user called with arguments (259702310, 'leha'), {}
+22-11-2022 20:39:49  ---  Function read_json called with arguments (), {}
+22-11-2022 20:39:49  ---  Function returned: True
+22-11-2022 20:39:54  ---  Function remove_user called with arguments (259702310, 'vitya'), {}
+22-11-2022 20:39:54  ---  Function read_json called with arguments (), {}
+22-11-2022 20:39:54  ---  Function returned: True
+22-11-2022 20:39:56  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:39:56  ---  Function read_json called with arguments (), {}
+22-11-2022 20:40:05  ---  Function remove_user called with arguments (259702310, 'igor'), {}
+22-11-2022 20:40:05  ---  Function read_json called with arguments (), {}
+22-11-2022 20:40:05  ---  Function returned: True
+22-11-2022 20:40:08  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:40:08  ---  Function read_json called with arguments (), {}
+22-11-2022 20:41:07  ---  Function user_addition called with arguments (259702310, 'leha'), {}
+22-11-2022 20:41:07  ---  Function read_json called with arguments (), {}
+22-11-2022 20:41:07  ---  Function returned: True
+22-11-2022 20:41:31  ---  Function user_addition called with arguments (259702310, 'vitya'), {}
+22-11-2022 20:41:31  ---  Function read_json called with arguments (), {}
+22-11-2022 20:41:31  ---  Function returned: True
+22-11-2022 20:41:56  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:41:56  ---  Function read_json called with arguments (), {}
+22-11-2022 20:43:52  ---  Function user_addition called with arguments (259702310, 'лёха'), {}
+22-11-2022 20:43:52  ---  Function read_json called with arguments (), {}
+22-11-2022 20:43:52  ---  Function returned: True
+22-11-2022 20:44:26  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:44:26  ---  Function read_json called with arguments (), {}
+22-11-2022 20:44:37  ---  Function remove_user called with arguments (259702310, 'лёха'), {}
+22-11-2022 20:44:37  ---  Function read_json called with arguments (), {}
+22-11-2022 20:44:37  ---  Function returned: True
+22-11-2022 20:44:51  ---  Function show called with arguments (259702310,), {}
+22-11-2022 20:44:51  ---  Function read_json called with arguments (), {}
+22-11-2022 23:05:48  ---  Function show called with arguments (259702310,), {}
+22-11-2022 23:05:48  ---  Function read_json called with arguments (), {}
