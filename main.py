@@ -35,17 +35,17 @@ def add_person(message) -> None:
         else:
             bot.send_message(message.chat.id, "Возникла непредвиденная ошибка.")
     except Exception:
-        print(Exception.__name__)
+        print(Exception)
         bot.send_message(message.chat.id, "Ошибка, возникло исключение, проверьте ввод.")
 
 
 @bot.message_handler(commands=["show"])
 def show_totals(message) -> None:
-    try:
+    # try:
         display_text = libs.show(message.chat.id)
         bot.send_message(message.chat.id, display_text)
-    except Exception:
-        bot.send_message(message.chat.id, "Ошибка, возникло исключение, проверьте ввод.")
+    # except Exception:
+    #     bot.send_message(message.chat.id, "Ошибка, возникло исключение, проверьте ввод.")
 
 
 @bot.message_handler(commands=["remove"])

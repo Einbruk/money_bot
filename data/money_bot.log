@@ -87,3 +87,58 @@
 22-11-2022 20:44:51  ---  Function read_json called with arguments (), {}
 22-11-2022 23:05:48  ---  Function show called with arguments (259702310,), {}
 22-11-2022 23:05:48  ---  Function read_json called with arguments (), {}
+23-11-2022 22:59:26  ---  Function user_addition called with arguments (259702310, 'vitya'), {}
+23-11-2022 22:59:26  ---  Function read_json called with arguments (), {}
+23-11-2022 22:59:26  ---  Name already exists
+23-11-2022 22:59:26  ---  Function returned: False
+23-11-2022 22:59:31  ---  Function show called with arguments (259702310,), {}
+23-11-2022 22:59:31  ---  Function read_json called with arguments (), {}
+23-11-2022 22:59:36  ---  Function user_addition called with arguments (259702310, 'peter'), {}
+23-11-2022 22:59:36  ---  Function read_json called with arguments (), {}
+23-11-2022 22:59:36  ---  Function returned: True
+23-11-2022 22:59:39  ---  Function show called with arguments (259702310,), {}
+23-11-2022 22:59:39  ---  Function read_json called with arguments (), {}
+23-11-2022 23:39:56  ---  Function show called with arguments (259702310,), {}
+23-11-2022 23:39:56  ---  Function read_json called with arguments (), {}
+24-11-2022 12:58:53  ---  Function show called with arguments (-653603737,), {}
+24-11-2022 12:58:53  ---  Function read_json called with arguments (), {}
+24-11-2022 12:59:23  ---  Function show called with arguments (259702310,), {}
+24-11-2022 12:59:23  ---  Function read_json called with arguments (), {}
+24-11-2022 12:59:31  ---  Function show called with arguments (-653603737,), {}
+24-11-2022 12:59:31  ---  Function read_json called with arguments (), {}
+24-11-2022 13:06:29  ---  Function user_addition called with arguments (-653603737, 'text'), {}
+24-11-2022 13:06:29  ---  Function read_json called with arguments (), {}
+24-11-2022 13:06:29  ---  Function returned: True
+24-11-2022 13:06:43  ---  Function user_addition called with arguments (-653603737, 'sm'), {}
+24-11-2022 13:06:43  ---  Function read_json called with arguments (), {}
+24-11-2022 13:10:49  ---  Function show called with arguments (259702310,), {}
+24-11-2022 13:10:49  ---  Function read_json called with arguments (), {}
+24-11-2022 13:11:29  ---  Function show called with arguments (259702310,), {}
+24-11-2022 13:11:42  ---  Function read_json called with arguments (), {}
+24-11-2022 13:13:06  ---  Function show called with arguments (259702310,), {}
+24-11-2022 13:13:26  ---  Function read_json called with arguments (), {}
+24-11-2022 13:19:31  ---  Function show called with arguments (259702310,), {}
+24-11-2022 13:19:31  ---  Function read_json called with arguments (), {}
+24-11-2022 13:20:47  ---  Function show called with arguments (259702310,), {}
+24-11-2022 13:20:47  ---  Function read_json called with arguments (), {}
+24-11-2022 13:25:11  ---  Function show called with arguments (259702310,), {}
+24-11-2022 13:25:11  ---  Function read_json called with arguments (), {}
+24-11-2022 15:43:53  ---  Function show called with arguments (259702310,), {}
+24-11-2022 15:43:53  ---  Function read_json called with arguments (), {}
+24-11-2022 15:45:08  ---  Function show called with arguments (259702310,), {}
+24-11-2022 15:45:08  ---  Function read_json called with arguments (), {}
+24-11-2022 15:45:15  ---  Function remove_user called with arguments (259702310, 'peter'), {}
+24-11-2022 15:45:15  ---  Function read_json called with arguments (), {}
+24-11-2022 15:45:15  ---  Function returned: True
+24-11-2022 15:45:23  ---  Function user_addition called with arguments (259702310, 'верон'), {}
+24-11-2022 15:45:23  ---  Function read_json called with arguments (), {}
+24-11-2022 15:45:23  ---  Function returned: True
+24-11-2022 15:45:34  ---  Function show called with arguments (-653603737,), {}
+24-11-2022 15:45:34  ---  Function read_json called with arguments (), {}
+24-11-2022 15:47:17  ---  Function show called with arguments (-653603737,), {}
+24-11-2022 15:47:17  ---  Function read_json called with arguments (), {}
+24-11-2022 15:47:25  ---  Function user_addition called with arguments (-653603737, 'виталик'), {}
+24-11-2022 15:47:25  ---  Function read_json called with arguments (), {}
+24-11-2022 15:47:25  ---  Function returned: True
+24-11-2022 15:47:29  ---  Function show called with arguments (-653603737,), {}
+24-11-2022 15:47:29  ---  Function read_json called with arguments (), {}

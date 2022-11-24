@@ -17,17 +17,22 @@ def read_json() -> dict:
     """
     with open("./data/user_data.json", "r", encoding="utf-8") as user_data:
         balance = json.load(user_data)
-
+    li_o =[]
     for key in balance.keys():
+        li_o.append(key)
+
+    for key in li_o:
         li = []
-        if key.isnumeric():
-            balance[int(key)] = balance.pop(key)
+        balance[int(key)] = balance.pop(key)
+
         for in_key in balance[int(key)].keys():
             if isinstance(in_key, str):
                 if in_key.isnumeric():
                     li.append(in_key)
+
         for li_key in li:
             balance[int(key)][int(li_key)] = balance[int(key)].pop(li_key)
+
 
     return balance
 
@@ -86,6 +91,8 @@ def show(chat_id: int) -> str:
                 if u_id + 1 != index:
                     text_to_print += "\towes {name}: {amount}\n".format(name=balance[chat_id][index - 1][0].capitalize(),
                                                                         amount=balance[chat_id][u_id][index])
+    else:
+        text_to_print = "Less than two users"
     return text_to_print
 
 
