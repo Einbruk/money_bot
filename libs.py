@@ -38,22 +38,25 @@ def read_json() -> dict:
 
 
 @bot_logging.log_decorator
-def user_addition(chat_id: int, new_name: str) -> bool:
+def user_addition(chat_id: int, new_name: str, prio: int) -> bool:
     """
     This function adds new user to a specific chat if chat_id  not in dictionary, it adds it as well
     :param new_name: str - username to add
     :param chat_id: int - id of a chat
+    :param prio: int - priority of user to split
     :return: bool - function returns true if operation was successful if any errors returns false
     """
 
     balance = read_json()
-
+    if prio is None:
+        prio = 1
     if chat_id not in balance.keys():
         balance[chat_id] = {}
         balance[chat_id]["count"] = 0
 
     num_of_users = balance[chat_id]["count"]
     all_names = [balance[chat_id][index][0] for index in range(num_of_users)]
+    new_name = str(prio) + " " + new_name
 
     if new_name in all_names:
         bot_logging.log("Name already exists")
@@ -86,10 +89,11 @@ def show(chat_id: int) -> str:
     num_of_users = balance[chat_id]["count"]
     if num_of_users >= 2:
         for u_id in range(num_of_users):
-            text_to_print += "{user}:\n".format(user=balance[chat_id][u_id][0].capitalize())
+            text_to_print += "{user} ({prio}):\n".format(user=balance[chat_id][u_id][0][2:].capitalize(),
+                                                         prio=balance[chat_id][u_id][0][:1])
             for index in range(1, num_of_users + 1):
                 if u_id + 1 != index:
-                    text_to_print += "\towes {name}: {amount}\n".format(name=balance[chat_id][index - 1][0].capitalize(),
+                    text_to_print += "\towes {name}: {amount}\n".format(name=balance[chat_id][index - 1][0][2:].capitalize(),
                                                                         amount=balance[chat_id][u_id][index])
     else:
         text_to_print = "Less than two users"
@@ -112,14 +116,14 @@ def remove_user(chat_id: int, r_name: str) -> bool:
         return False
 
     num_of_users = balance[chat_id]["count"]
-    all_names = [balance[chat_id][index][0] for index in range(num_of_users)]
+    all_names = [balance[chat_id][index][0][2:] for index in range(num_of_users)]
 
     if r_name not in all_names:
         bot_logging.log("user does not exists")
         return False
     else:
         for u_id in range(num_of_users):
-            if balance[chat_id][u_id][0] == r_name:
+            if balance[chat_id][u_id][0][2:] == r_name:
                 r_name_id = u_id
                 for index in range(1, num_of_users + 1):
                     if balance[chat_id][u_id][index] != 0 and balance[chat_id][u_id][index] is not None:
@@ -153,7 +157,7 @@ def split_costs(chat_id: int, who_payed: str, amount: int, to_split: list = None
     balance = read_json()
 
     num_of_users = balance[chat_id]["count"]
-    all_names = [balance[chat_id][index][0] for index in range(num_of_users)]
+    all_names = [balance[chat_id][index][0][2:] for index in range(num_of_users)]
 
     if who_payed not in all_names:
         bot_logging.log("Error, User not found")
@@ -168,23 +172,27 @@ def split_costs(chat_id: int, who_payed: str, amount: int, to_split: list = None
     if len(to_split) != 0:
         split = int(amount / (len(to_split) + 1))
     else:
-        split = int(amount / (len(balance[chat_id].keys()) - 1))
+        all_count = 0
+        for u_id in range(num_of_users):
+            all_count += int(balance[chat_id][u_id][0][:1])
+        print(all_count)
+        split = int(amount / all_count)
 
     for u_id in range(num_of_users):
-        if balance[chat_id][u_id][0] == who_payed:
+        if balance[chat_id][u_id][0][2:] == who_payed:
             who_payed_id = u_id
             break
 
     if len(to_split) != 0:
         for u_id in range(num_of_users):
-            if balance[chat_id][u_id][0] in to_split:
+            if balance[chat_id][u_id][0][2:] in to_split:
                 balance[chat_id][u_id][who_payed_id + 1] += split
                 balance[chat_id][who_payed_id][u_id + 1] -= split
     else:
         for u_id in range(num_of_users):
             if who_payed_id != u_id:
-                balance[chat_id][u_id][who_payed_id + 1] += split
-                balance[chat_id][who_payed_id][u_id + 1] -= split
+                balance[chat_id][u_id][who_payed_id + 1] += split * int(balance[chat_id][u_id][0][:1])
+                balance[chat_id][who_payed_id][u_id + 1] -= split * int(balance[chat_id][u_id][0][:1])
 
     with open("data/user_data.json", "w", encoding="utf-8") as user_data:
         json.dump(balance, user_data, indent=4)
@@ -204,18 +212,18 @@ def loan(chat_id: int, who_gave: str, amount: int, who_recieved: str) -> bool:
     balance = read_json()
 
     num_of_users = balance[chat_id]["count"]
-    all_names = [balance[chat_id][index][0] for index in range(num_of_users)]
+    all_names = [balance[chat_id][index][0][2:] for index in range(num_of_users)]
     if who_gave not in all_names or who_recieved not in all_names:
         bot_logging.log("User not found")
         return False
 
     for u_id in range(num_of_users):
-        if balance[chat_id][u_id][0] == who_gave:
+        if balance[chat_id][u_id][0][2:] == who_gave:
             who_gave_id = u_id
             break
 
     for u_id in range(num_of_users):
-        if balance[chat_id][u_id][0] == who_recieved:
+        if balance[chat_id][u_id][0][2:] == who_recieved:
             balance[chat_id][u_id][who_gave_id + 1] += amount
             balance[chat_id][who_gave_id][u_id + 1] -= amount
             break

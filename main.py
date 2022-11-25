@@ -11,11 +11,15 @@ import libs
 
 with open("./data/config.txt", "r") as cfg:
     token = cfg.read()
+    if token.endswith("\n"):
+        token = token[:-2]
+
 help = "Supported commands:\n" \
        "/show - show balance\n" \
        "/split _who_ _amount_ _optional_ - new spending, who payed, amount," \
        " and to whom to spilt with (default = all added)\n" \
-       "/add _name_ - add person to a group who spends together\n" \
+       "/add _name_ _coefficient_- add person to a group who spends together\n" \
+       "coefficient = amount of people this users pays for\n" \
        "/remove _name_ - remove a person from a group\n" \
        "/loan _who_ _amount_ _to_whom_ - when someone gave money to someone"
 bot = telebot.TeleBot(token)
@@ -30,22 +34,28 @@ def helper(message) -> None:
 def add_person(message) -> None:
     command = message.text.split()
     try:
-        if libs.user_addition(message.chat.id, command[1].lower()):
+        if len(command) >= 3:
+            command[2] = int(command[2])
+        else:
+            command.append(None)
+        if libs.user_addition(message.chat.id, command[1].lower(), command[2]):
             bot.send_message(message.chat.id, "Юзер {name} добавлен в группу.".format(name=command[1].capitalize()))
         else:
             bot.send_message(message.chat.id, "Возникла непредвиденная ошибка.")
     except Exception:
         print(Exception)
         bot.send_message(message.chat.id, "Ошибка, возникло исключение, проверьте ввод.")
+        bot.send_message(259702310, "Ошибка бота, сломался?")
 
 
 @bot.message_handler(commands=["show"])
 def show_totals(message) -> None:
-    # try:
+    try:
         display_text = libs.show(message.chat.id)
         bot.send_message(message.chat.id, display_text)
-    # except Exception:
-    #     bot.send_message(message.chat.id, "Ошибка, возникло исключение, проверьте ввод.")
+    except Exception:
+        bot.send_message(message.chat.id, "Ошибка, возникло исключение, проверьте ввод.")
+        bot.send_message(259702310, "Ошибка бота, сломался?")
 
 
 @bot.message_handler(commands=["remove"])
@@ -58,6 +68,7 @@ def remove(message) -> None:
             bot.send_message(message.chat.id, "Возникла непредвиденная ошибка.")
     except Exception:
         bot.send_message(message.chat.id, "Ошибка, возникло исключение, проверьте ввод.")
+        bot.send_message(259702310, "Ошибка бота, сломался?")
 
 
 @bot.message_handler(commands=["split"])
@@ -72,6 +83,7 @@ def split(message) -> None:
             bot.send_message(message.chat.id, "Ошибка, проверьте ввод.")
     except Exception:
         bot.send_message(message.chat.id, "Ошибка, возникло исключение, проверьте ввод.")
+        bot.send_message(259702310, "Ошибка бота, сломался?")
 
 
 @bot.message_handler(commands=["loan"])
@@ -84,6 +96,7 @@ def loan(message) -> None:
             bot.send_message(message.chat.id, "Ошибка, проверьте ввод.")
     except Exception:
         bot.send_message(message.chat.id, "Ошибка, возникло исключение, проверьте ввод.")
+        bot.send_message(259702310, "Ошибка бота, сломался?")
 
 
 bot.polling(none_stop=True)
