@@ -33,7 +33,6 @@ def read_json() -> dict:
         for li_key in li:
             balance[int(key)][int(li_key)] = balance[int(key)].pop(li_key)
 
-
     return balance
 
 
@@ -194,7 +193,7 @@ def split_costs(chat_id: int, who_payed: str, amount: int, to_split: list = None
                 balance[chat_id][u_id][who_payed_id + 1] += split * int(balance[chat_id][u_id][0][:1])
                 balance[chat_id][who_payed_id][u_id + 1] -= split * int(balance[chat_id][u_id][0][:1])
 
-    with open("data/user_data.json", "w", encoding="utf-8") as user_data:
+    with open("./data/user_data.json", "w", encoding="utf-8") as user_data:
         json.dump(balance, user_data, indent=4)
     return True
 
